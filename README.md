@@ -28,8 +28,11 @@ Source - OCLHV data for NIFTY IT index between 2015-2016. Data level - Daily.
 3. Create the following dummy time series:
 
     3.1. Volume shocks - If volume traded is 10% higher/lower than previous day - make a 0/1 boolean time series for shock, and another 0/1 dummy-coded time series for direction of volume shock.
+
     3.2. Price shocks - If closing price at T vs T-1 has a difference > 2%, then 0/1 boolean time series for shock, and another 0/1 dummy-coded time series for direction of price shock.
+
     3.3. Pricing black swan - If closing price at T vs T-1 has a difference > 2%, then 0/1 boolean time series for shock, and another 0/1 dummy-coded time series for direction of the shock. (same as point 3.2 above)
+
     3.4. Pricing shock without volume shock (based on points 3.1 and 3.2 above) - Make a 0/1 dummy time series.
 
 
@@ -56,10 +59,14 @@ Source - OCLHV data for NIFTY IT index between 2015-2016. Data level - Daily.
 
 1. Quick build any two models. Quick build is defined as grid search of less than 9 permutation combinations. You can choose the two options of multiple multivariate models from those mentioned below. The goal is to to predict INFY,TCS prices for tomorrow. Models that you can choose:
 
-    1.1 http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoLars.html#sklearn.linear_model.LassoLars 
-    1.2 http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression 
-    1.3 http://scikit-learn.org/stable/modules/linear_model.html#ridge-regression 
-    1.4 http://scikit-learn.org/stable/modules/svm.html#regression 
+    1.1 http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoLars.html#sklearn.linear_model.LassoLars
+
+    1.2 http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression
+
+    1.3 http://scikit-learn.org/stable/modules/linear_model.html#ridge-regression
+
+    1.4 http://scikit-learn.org/stable/modules/svm.html#regression
+
     1.5 http://scikit-learn.org/stable/modules/ensemble.html#regression
 
 2. Write testcases for the two models you have chose. Your testing should take atleast 5 time steps except today . your testcases must written using PYTEST.
