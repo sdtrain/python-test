@@ -6,7 +6,7 @@
 Source - https://github.com/swapniljariwala/nsepy
 
 
-> RedCarpet's Internship assignment: https://pastebin.com/QDbSQPZg
+> RedCarpetUp's Internship assignment: https://pastebin.com/QDbSQPZg
 
 
 ### Data Set:
